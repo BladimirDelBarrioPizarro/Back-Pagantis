@@ -17,7 +17,7 @@ public class Wallet implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "pagacoint")
-    private String pagacoint;
+    private Integer pagacoint;
     @OneToOne(fetch = FetchType.EAGER)
     @JoinTable(name = "wallet_user",
             joinColumns = @JoinColumn(name="wallet_id"),inverseJoinColumns = @JoinColumn(name="user_id"),

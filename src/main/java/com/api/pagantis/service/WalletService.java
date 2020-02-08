@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface WalletService {
     List<WalletDTO> findWalletsByUserId(Long userId);
+    List<WalletDTO> findWalletsByUserName(String name);
 }

@@ -13,4 +13,7 @@ import java.util.List;
 public interface WalletController {
     @GetMapping(path="/wallets/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<List<WalletDTO>> findWalletsByUserId(@PathVariable("id") Long userId);
+
+    @GetMapping(path="/wallets",produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<List<WalletDTO>> findWalletsByUserNamw(@RequestParam("name") String name);
 }

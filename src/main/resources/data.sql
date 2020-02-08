@@ -21,14 +21,14 @@ CREATE TABLE public.wallets(
     pagacoint integer not null
 );
 
-INSERT INTO wallets (id,pagacoint) VALUES ('1',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('2',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('3',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('4',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('5',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('6',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('7',1000);
-INSERT INTO wallets (id,pagacoint) VALUES ('8',1000);
+INSERT INTO wallets (id,pagacoint) VALUES (1,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (2,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (3,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (4,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (5,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (6,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (7,1000);
+INSERT INTO wallets (id,pagacoint) VALUES (8,1000);
 
 CREATE TABLE public.wallet_user(
     user_id integer NOT NULL,

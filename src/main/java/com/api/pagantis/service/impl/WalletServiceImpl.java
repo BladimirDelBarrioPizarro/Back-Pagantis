@@ -24,4 +24,10 @@ public class WalletServiceImpl implements WalletService {
         List<Wallet> walletList =  walletDao.findAll().stream().filter(wallet -> wallet.getUser().getId().equals(userId)).collect(Collectors.toList());
         return WalletMapper.mapWalletListToWalletDTOList(walletList);
     }
+
+    @Override
+    public List<WalletDTO> findWalletsByUserName(String name) {
+        List<Wallet> walletList = walletDao.findAll().stream().filter(wallet -> wallet.getUser().getName().equals(name)).collect(Collectors.toList());
+        return WalletMapper.mapWalletListToWalletDTOList(walletList) ;
+    }
 }
