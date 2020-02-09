@@ -25,7 +25,7 @@ public class WalletControllerImpl implements WalletController {
     }
 
     @Override
-    public ResponseEntity<List<WalletDTO>> findWalletsByUserNamw(String name) {
+    public ResponseEntity<List<WalletDTO>> findWalletsByUserName(String name) {
         log.info(" -- GET /wallets/{}",name);
         return new ResponseEntity<>(walletService.findWalletsByUserName(name), HttpStatus.OK);
     }

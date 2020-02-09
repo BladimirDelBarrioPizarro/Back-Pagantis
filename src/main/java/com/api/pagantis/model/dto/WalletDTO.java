@@ -13,5 +13,6 @@ import lombok.RequiredArgsConstructor;
 public class WalletDTO {
     private Long id;
     private Integer pagacoint;
+    private String bank;
     private User user;
 }

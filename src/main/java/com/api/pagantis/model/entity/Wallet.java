@@ -18,6 +18,8 @@ public class Wallet implements Serializable {
     private Long id;
     @Column(name = "pagacoint")
     private Integer pagacoint;
+    @Column(name = "bank")
+    private String bank;
     @OneToOne(fetch = FetchType.EAGER)
     @JoinTable(name = "wallet_user",
             joinColumns = @JoinColumn(name="wallet_id"),inverseJoinColumns = @JoinColumn(name="user_id"),

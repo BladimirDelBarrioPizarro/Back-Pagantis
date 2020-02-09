@@ -18,17 +18,18 @@ INSERT INTO users (id,name,department) VALUES (4,'Angela','Legal');
 
 CREATE TABLE public.wallets(
     id SERIAL primary key NOT NULL,
-    pagacoint integer not null
+    pagacoint integer not null,
+    bank character varying(100) NOT NULL
 );
 
-INSERT INTO wallets (id,pagacoint) VALUES (1,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (2,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (3,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (4,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (5,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (6,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (7,1000);
-INSERT INTO wallets (id,pagacoint) VALUES (8,1000);
+INSERT INTO wallets (id,pagacoint,bank) VALUES (1,1000,'Santander');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (2,1000,'Santader');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (3,1000,'Sabadell');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (4,1000,'Bankia');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (5,1000,'BBVA');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (6,1000,'BBVA');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (7,1000,'ING');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (8,1000,'ING');
 
 CREATE TABLE public.wallet_user(
     user_id integer NOT NULL,

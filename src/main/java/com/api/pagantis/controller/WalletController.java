@@ -15,5 +15,5 @@ public interface WalletController {
     ResponseEntity<List<WalletDTO>> findWalletsByUserId(@PathVariable("id") Long userId);
 
     @GetMapping(path="/wallets",produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<List<WalletDTO>> findWalletsByUserNamw(@RequestParam("name") String name);
+    ResponseEntity<List<WalletDTO>> findWalletsByUserName(@RequestParam("name") String name);
 }

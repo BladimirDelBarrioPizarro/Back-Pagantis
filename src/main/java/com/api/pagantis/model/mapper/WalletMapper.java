@@ -16,6 +16,7 @@ public class WalletMapper {
         return WalletDTO.builder()
                 .id(wallet.getId())
                 .pagacoint(wallet.getPagacoint())
+                .bank(wallet.getBank())
                 .user(wallet.getUser())
                 .build();
     }
