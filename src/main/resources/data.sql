@@ -23,12 +23,12 @@ CREATE TABLE public.wallets(
 );
 
 INSERT INTO wallets (id,pagacoint,bank) VALUES (1,1000,'Santander');
-INSERT INTO wallets (id,pagacoint,bank) VALUES (2,1000,'Santader');
-INSERT INTO wallets (id,pagacoint,bank) VALUES (3,1000,'Sabadell');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (2,1000,'Sabadell');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (3,1000,'Barclays');
 INSERT INTO wallets (id,pagacoint,bank) VALUES (4,1000,'Bankia');
-INSERT INTO wallets (id,pagacoint,bank) VALUES (5,1000,'BBVA');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (5,1000,'La Caixa');
 INSERT INTO wallets (id,pagacoint,bank) VALUES (6,1000,'BBVA');
-INSERT INTO wallets (id,pagacoint,bank) VALUES (7,1000,'ING');
+INSERT INTO wallets (id,pagacoint,bank) VALUES (7,1000,'Citigroup');
 INSERT INTO wallets (id,pagacoint,bank) VALUES (8,1000,'ING');
 
 CREATE TABLE public.wallet_user(

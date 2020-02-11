@@ -12,6 +12,7 @@ import com.api.pagantis.service.impl.UserServiceImpl;
 import com.api.pagantis.service.impl.WalletServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.hateoas.server.EntityLinks;
 
 @Configuration
 public class ApiConfig {
@@ -32,8 +33,8 @@ public class ApiConfig {
     }
 
     @Bean
-    public WalletController walletController(WalletService walletService){
-        return new WalletControllerImpl(walletService);
+    public WalletController walletController(WalletService walletService, EntityLinks entityLinks){
+        return new WalletControllerImpl(walletService,entityLinks);
     }
 
 }

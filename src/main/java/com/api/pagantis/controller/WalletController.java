@@ -1,10 +1,10 @@
 package com.api.pagantis.controller;
 
 import com.api.pagantis.model.dto.WalletDTO;
+import org.springframework.hateoas.Link;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.*;;
 import java.util.List;
 
 @CrossOrigin("http://localhost:3000")
@@ -16,4 +16,7 @@ public interface WalletController {
 
     @GetMapping(path="/wallets",produces = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<List<WalletDTO>> findWalletsByUserName(@RequestParam("name") String name);
+
+    @PostMapping(path = "/wallets",produces = MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<Link> transaction(@RequestParam("idTrans") Long idTrans, @RequestParam("idRecep") Long idRecep, @RequestParam("pagacoint") Long pagacoint);
 }
