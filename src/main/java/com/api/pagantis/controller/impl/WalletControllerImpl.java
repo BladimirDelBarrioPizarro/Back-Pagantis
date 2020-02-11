@@ -6,28 +6,18 @@ import com.api.pagantis.service.WalletService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.Links;
-import org.springframework.hateoas.server.EntityLinks;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import javax.persistence.Entity;
-import java.net.URI;
 import java.util.List;
-
-import static org.springframework.hateoas.server.core.DummyInvocationUtils.methodOn;
-import static org.springframework.hateoas.server.core.WebHandler.linkTo;
 
 @Slf4j
 public class WalletControllerImpl implements WalletController {
 
     private WalletService walletService;
-    private final EntityLinks entityLinks;
 
 
-    public WalletControllerImpl(WalletService walletService, EntityLinks entityLinks) {
+    public WalletControllerImpl(WalletService walletService) {
         this.walletService = walletService;
-        this.entityLinks = entityLinks;
     }
 
     @Override
@@ -45,11 +35,8 @@ public class WalletControllerImpl implements WalletController {
     @Override
     public ResponseEntity<Link> transaction(Long idTrans, Long idRecep, Long pagacoint) {
         log.info(" -- POST /wallets Init transaction with {} pagacoint", pagacoint);
-        URI uri = URI.create("/api/v1/wallets");
-        Link link = new Link(uri.getPath());
-        walletService.transaction(idTrans,idRecep,pagacoint);
-        link.withTitle("Operation TRUE");
-        return new ResponseEntity(link, HttpStatus.OK);
+        EntityModel<Boolean> response = new EntityModel<>(walletService.transaction(idTrans,idRecep,pagacoint));
+        return new ResponseEntity(response, HttpStatus.OK);
     }
 
 
