@@ -1,6 +1,7 @@
 package com.api.pagantis.controller;
 
 import com.api.pagantis.model.dto.WalletDTO;
+import com.api.pagantis.model.models.Transaction;
 import org.springframework.hateoas.Link;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,5 +19,5 @@ public interface WalletController {
     ResponseEntity<List<WalletDTO>> findWalletsByUserName(@RequestParam("name") String name);
 
     @PostMapping(path = "/wallets",produces = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<Link> transaction(@RequestParam("idTrans") Long idTrans, @RequestParam("idRecep") Long idRecep, @RequestParam("pagacoint") Long pagacoint);
+    ResponseEntity<Link> transaction(@RequestBody Transaction transaction);
 }

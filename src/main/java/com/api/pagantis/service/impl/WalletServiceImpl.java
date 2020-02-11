@@ -4,6 +4,7 @@ import com.api.pagantis.dao.WalletDao;
 import com.api.pagantis.model.dto.WalletDTO;
 import com.api.pagantis.model.entity.Wallet;
 import com.api.pagantis.model.mapper.WalletMapper;
+import com.api.pagantis.model.models.Transaction;
 import com.api.pagantis.service.WalletService;
 
 import java.util.List;
@@ -32,17 +33,17 @@ public class WalletServiceImpl implements WalletService {
     }
 
     @Override
-    public Boolean transaction(Long idTrans, Long idRecep, Long pagacoint) {
+    public Boolean transaction(Transaction transaction) {
         try{
-            Optional<Wallet> walletR = walletDao.findById(idRecep);
+            Optional<Wallet> walletR = walletDao.findById(transaction.getIdRecep());
             Integer pagacointR = walletR.get().getPagacoint();
-            Integer totalR = Math.toIntExact(pagacointR + pagacoint);
+            Integer totalR = Math.toIntExact(pagacointR + transaction.getPagacoint());
             walletR.get().setPagacoint(totalR);
             walletDao.save(walletR.get());
 
-            Optional<Wallet> walletT = walletDao.findById(idTrans);
+            Optional<Wallet> walletT = walletDao.findById(transaction.getIdTrans());
             Integer pagacointT = walletT.get().getPagacoint();
-            Integer totalT = Math.toIntExact(pagacointT - pagacoint);
+            Integer totalT = Math.toIntExact(pagacointT - transaction.getPagacoint());
             walletT.get().setPagacoint(totalT);
             walletDao.save(walletT.get());
             return true;

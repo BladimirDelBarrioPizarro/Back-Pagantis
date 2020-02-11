@@ -35,5 +35,4 @@ public class ApiConfig {
     public WalletController walletController(WalletService walletService){
         return new WalletControllerImpl(walletService);
     }
-
 }

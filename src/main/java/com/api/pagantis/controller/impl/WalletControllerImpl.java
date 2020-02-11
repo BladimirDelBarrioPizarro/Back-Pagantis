@@ -2,6 +2,7 @@ package com.api.pagantis.controller.impl;
 
 import com.api.pagantis.controller.WalletController;
 import com.api.pagantis.model.dto.WalletDTO;
+import com.api.pagantis.model.models.Transaction;
 import com.api.pagantis.service.WalletService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.hateoas.EntityModel;
@@ -33,11 +34,9 @@ public class WalletControllerImpl implements WalletController {
     }
 
     @Override
-    public ResponseEntity<Link> transaction(Long idTrans, Long idRecep, Long pagacoint) {
-        log.info(" -- POST /wallets Init transaction with {} pagacoint", pagacoint);
-        EntityModel<Boolean> response = new EntityModel<>(walletService.transaction(idTrans,idRecep,pagacoint));
+    public ResponseEntity<Link> transaction(Transaction transaction) {
+        log.info(" -- POST /wallets Init transaction with {} pagacoint", transaction.getPagacoint());
+        EntityModel<Boolean> response = new EntityModel<>(walletService.transaction(transaction));
         return new ResponseEntity(response, HttpStatus.OK);
     }
-
-
 }
