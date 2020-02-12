@@ -1,4 +1,4 @@
-package com.api.pagantis.boot;
+package com.api.pagantis.boot.config;
 
 import com.api.pagantis.controller.UserController;
 import com.api.pagantis.controller.WalletController;
